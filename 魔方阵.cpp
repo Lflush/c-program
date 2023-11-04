@@ -1,0 +1,71 @@
+#include<iostream>
+using namespace std;
+#include<string>
+int main()
+{
+	int n;
+	cin>>n;
+	while(n!=0)
+	{
+		int a[100][100],i,j,h,l;
+		a[0][(n-1)/2]=1;
+		int m=0,k=(n-1)/2;
+		for(i=2;i<=n*n;i++)
+		{
+			/*if(m-1<0)
+			{
+				m=n-1;
+			}
+			else
+			{
+				m--;
+			}
+			if(k+1>n-1)
+			{
+				k=0;
+			}
+			else
+			{
+				k++;
+			}*/
+			h=m;
+			l=k;
+			if(h==0)
+			{
+				h=n-1;
+			}
+			else
+			{
+				h--;
+			}
+			if(l==n-1)
+			{
+				l=0;
+			}
+			else
+			{
+				l++;
+			}
+			if(a[h][l]==0)
+			{
+				a[h][l]=i;
+			}
+			else
+			{
+				a[m+1][k]=i;
+				m=m+1;
+			}
+		}
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<n;j++)
+			{
+				cout<<a[i][j]<<"\t";
+			}
+			cout<<endl;
+		}
+		cin>>n;
+	}
+	system("pause");
+	return 0;
+}
