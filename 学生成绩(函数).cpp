@@ -1,81 +1,81 @@
-#include<stdio.h>
+#include <stdio.h>
 void aver(double (*a)[5])
 {
 	double s;
 	int i;
-	for(i=0;i<4;i++)
+	for (i = 0; i < 4; i++)
 	{
-		s=(a[i][0]+a[i][1]+a[i][2]+a[i][3]+a[i][4])/5;
-		printf("µÚ%d¸öÑ§ÉúµÄÆ½¾ù·ÖÎª%lf\n",i+1,s);
+		s = (a[i][0] + a[i][1] + a[i][2] + a[i][3] + a[i][4]) / 5;
+		printf("ï¿½ï¿½%dï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½Îª%lf\n", i + 1, s);
 	}
 }
 void fall(double (*a)[5])
 {
-	int i,j,n,m;
+	int i, j, n, m;
 	double s;
 	printf("the fail to pass student:\n");
-	for(i=0;i<4;i++)
+	for (i = 0; i < 4; i++)
 	{
-		n=0;
-		for(j=0;j<5;j++)
+		n = 0;
+		for (j = 0; j < 5; j++)
 		{
-			if(a[i][j]<60)
+			if (a[i][j] < 60)
 			{
 				n++;
 			}
 		}
-		if(n>2)
+		if (n > 2)
 		{
-			printf("student %d\n",i+1);
-			for(m=0;m<5;m++)
+			printf("student %d\n", i + 1);
+			for (m = 0; m < 5; m++)
 			{
-				printf("%lf\t",a[i][m]);
+				printf("%lf\t", a[i][m]);
 			}
 			printf("\n");
-			s=(a[i][0]+a[i][1]+a[i][2]+a[i][3]+a[i][4])/5;
-			printf("µÚ%d¸öÑ§ÉúµÄÆ½¾ù·ÖÎª%lf\n",i+1,s);
+			s = (a[i][0] + a[i][1] + a[i][2] + a[i][3] + a[i][4]) / 5;
+			printf("ï¿½ï¿½%dï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½Îª%lf\n", i + 1, s);
 		}
-	} 
+	}
 }
 void find(double (*a)[5])
 {
-	int i,j,m,s;
+	int i, j, m, s;
 	printf("the average score >90:\n");
-	for(i=0;i<4;i++)
+	for (i = 0; i < 4; i++)
 	{
-		s=(a[i][0]+a[i][1]+a[i][2]+a[i][3]+a[i][4])/5;
-		if(s>90)
+		s = (a[i][0] + a[i][1] + a[i][2] + a[i][3] + a[i][4]) / 5;
+		if (s > 90)
 		{
-			printf("student %d\n",i+1);
+			printf("student %d\n", i + 1);
 		}
 	}
 	printf("the all score >85:\n");
-	for(i=0;i<4;i++)
+	for (i = 0; i < 4; i++)
 	{
-		m=0;
-		for(j=0;j<5;j++)
+		m = 0;
+		for (j = 0; j < 5; j++)
 		{
-			if(a[i][j]<86)
+			if (a[i][j] < 86)
 			{
 				m++;
 			}
 		}
-		if(m==0)
+		if (m == 0)
 		{
-			printf("student %d\n",i+1);
+			printf("student %d\n", i + 1);
 		}
 	}
 }
 int main()
 {
 	double a[4][5];
-	int i,j;
-	printf("ÇëÊäÈë³É¼¨\n");
-	for(i=0;i<4;i++)
+	int i, j;
+	printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½\n");
+	for (i = 0; i < 4; i++)
 	{
-		for(j=0;j<5;j++)
+		for (j = 0; j < 5; j++)
 		{
-			scanf("%lf",&a[i][j]);
+			scanf("%lf", &a[i][j]);
 		}
 	}
 	aver(a);
