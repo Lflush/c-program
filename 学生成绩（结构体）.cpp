@@ -1,59 +1,59 @@
-#include<stdio.h>
-struct student 
+#include <stdio.h>
+struct student
 {
 	char name[10];
 	int scode;
 	double score[3];
-}; 
+};
 void input(student *p)
 {
-	scanf("%s %d %lf %lf %lf",&p->name,&p->scode,&p->score[0],&p->score[1],&p->score[2]);
-	//printf("%s %d %lf %lf %lf",p->name,p->scode,p->score[0],p->score[1],p->score[2]);
+	scanf("%s %d %lf %lf %lf", &p->name, &p->scode, &p->score[0], &p->score[1], &p->score[2]);
+	// printf("%s %d %lf %lf %lf",p->name,p->scode,p->score[0],p->score[1],p->score[2]);
 }
 double aver(student *p[])
 {
-	int i,j;
-	double a=0;
-	for(i=0;i<5;i++)
+	int i, j;
+	double a = 0;
+	for (i = 0; i < 5; i++)
 	{
-		for(j=0;j<3;j++)
+		for (j = 0; j < 3; j++)
 		{
-			a=a+p[i]->score[j];
-		} 
+			a = a + p[i]->score[j];
+		}
 	}
-	a=a/15;
+	a = a / 15;
 	return a;
 }
 int max(student *p[])
 {
-	int i,j,n;
-	double k=0;
-	for(i=0;i<5;i++)
+	int i, j, n;
+	double k = 0;
+	for (i = 0; i < 5; i++)
 	{
-		for(j=0;j<3;j++)
+		for (j = 0; j < 3; j++)
 		{
-			if(k<p[i]->score[j])
+			if (k < p[i]->score[j])
 			{
-				k=p[i]->score[j];
-				n=i;
+				k = p[i]->score[j];
+				n = i;
 			}
-		} 
+		}
 	}
 	return n;
 }
 int main()
 {
-	int i,j,k;
+	int i, j, k;
 	double a;
-	student s[5],*p[5];
-	for(i=0;i<5;i++)
+	student s[5], *p[5];
+	for (i = 0; i < 5; i++)
 	{
-		p[i]=&s[i];
+		p[i] = &s[i];
 		input(p[i]);
 	}
-	a=aver(p);
-	printf("3ÃÅ¿ÎµÄ×ÜÆ½¾ù·ÖÊÇ%lf\n",a);
-	k=max(p);
-	printf("×î¸ß·ÖµÄÑ§Éú£º\n%s %d %lf %lf %lf",p[k]->name,p[k]->scode,p[k]->score[0],p[k]->score[1],p[k]->score[2]);
+	a = aver(p);
+	printf("3ï¿½Å¿Îµï¿½ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%lf\n", a);
+	k = max(p);
+	printf("ï¿½ï¿½ß·Öµï¿½Ñ§ï¿½ï¿½ï¿½ï¿½\n%s %d %lf %lf %lf", p[k]->name, p[k]->scode, p[k]->score[0], p[k]->score[1], p[k]->score[2]);
 	return 0;
 }
